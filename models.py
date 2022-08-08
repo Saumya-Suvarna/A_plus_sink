@@ -68,7 +68,7 @@ class User(UserMixin, Model):
 
 	@classmethod
 	def create_user(cls, username, email, password, first_name, last_name, 
-	current_company = "", curent_role= "", skills = "", description="",
+	current_company = "", current_role= "", skills = "", description="",
 	admin=False):
 		"""cls here is being user. so cls.create is kind of user.create"""
 		try:
