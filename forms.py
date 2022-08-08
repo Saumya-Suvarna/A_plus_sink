@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, TextAreaField
+from wtforms import DateTimeLocalField
 from wtforms.validators import DataRequired, Regexp, ValidationError, Email, Length, EqualTo
 
 from models import User
@@ -75,4 +76,5 @@ class LoginForm(FlaskForm):
 	password = PasswordField('Password', validators=[DataRequired()])
 
 class PostForm(FlaskForm):
-	content = TextAreaField("What's Up?", validators = [DataRequired()])
+	content = TextAreaField("Session Details", validators = [DataRequired()])
+	timing = DateTimeLocalField('DatePicker',format='%Y-%m-%dT%H:%M')

@@ -96,6 +96,7 @@ class Post(Model):
 		related_name = 'posts'
 	)
 	content = TextField()
+	timing = DateField()
 
 	class Meta:
 		database = DATABASE
