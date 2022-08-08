@@ -1,35 +1,24 @@
 # A_plus_sink
 
 ### Description
-This is a project that focussed on STEM education through mentoring. 
+This is a project that focussed on STEM education, diversity & inclusion through mentoring. 
 
 ### Documentation
 [Link](https://duckduckgo.com) to documentation for the project.
 
 ### Instructions to run the project
-Install the dependencies:
+Install required dependencies:
 ```sh
-pip install -r requirements.txt
+make install
 ```
 
-Start the Kafka producer and consumer as per [this](https://kafka.apache.org/quickstart) documentation. The topics you need on kafka are `registration` and `post`.
-
-
-Open a terminal and run 
+Bring up servers
 ```sh
-python consumer_registration.py
-```
-
-Open a terminal and run 
-```sh
-python consumer_post.py
-```
-
-Open a terminal and run 
-```sh
-python app.py
+make run
 ```
 
 Navigate to `localhost:8000` on your browser to interact with the application.
 
+### More information
+Start the Kafka producer and consumer as per [this](https://kafka.apache.org/quickstart) documentation. The topics you need on kafka are `registration` and `post`.
 You can use [this](https://sqlitebrowser.org/) tool for viewing database information.
