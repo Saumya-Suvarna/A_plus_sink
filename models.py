@@ -28,6 +28,7 @@ class User(UserMixin, Model):
 	first_name = CharField(max_length = 100)
 	last_name = CharField(max_length = 100)
 	skills = CharField()
+	rating = FloatField()
 	description = CharField()
 	current_role = CharField()
 	current_company = CharField()
