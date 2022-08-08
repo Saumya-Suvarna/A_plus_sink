@@ -62,8 +62,8 @@ def register():
             "skills": form.last_name.data,
             "description": form.description.data,
         }
-        producer.producerData(userModelData)
-        print("data sent to producer")
+        producer.producerData(userModelData, 'registration')
+        print("data sent to registration producer")
 
         return redirect(url_for('index'))
     return render_template('register.html', form=form)
@@ -101,9 +101,18 @@ def logout():
 def post():
     form = forms.PostForm()
     if form.validate_on_submit():
-        models.Post.create(user=g.user.id,
-                           content=form.content.data.strip())
+        # models.Post.create(user=g.user.id,
+        #                    content=form.content.data.strip(),
+		# 				   timing = form.timing.data.strftime('"%Y-%m-%d %H:%M:%S"'))
         flash("Message Posted: Thanks!", "success")
+        postData = {
+            "user": g.user.id,
+            "content":form.content.data.strip(),
+            "timing": form.timing.data.strftime('"%Y-%m-%d %H:%M:%S"')
+        }
+        producer.producerData(postData, 'post')
+        print("data sent to post producer")
+
         return redirect(url_for('index'))
     return render_template('post.html', form=form)
 

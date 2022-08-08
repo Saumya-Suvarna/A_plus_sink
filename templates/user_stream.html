@@ -8,7 +8,7 @@
 		<div class="grid-50">
 			<div class="grid-33">
 				<h5>Rating</h5>
-				<p>{{ user.posts.count() }} / 5</p>
+				<p>{{ user.rating }} / 5</p>
 			</div>
 			<div class="grid-33">
 				<h5>Followers</h5>	
@@ -31,11 +31,22 @@
 			{% endif %}
 		</div>
 	</div>
+	<br>
 	<div class="row">
-		<div class="grid-33">
-			<h1>{{user.username}}</h1>
-		</div>
+		<div class="grid-50"><b>Current Role: </b>{{user.current_role}}</div>
+		<div class="grid-50"><b>Current Company: </b>{{user.current_company}}</div>
 	</div>
+	<br>
+	<div class="row">
+		<h2>Skills</h2>
+		{{user.skills}}
+	</div>
+	<br>
+	<div class="row">
+		<h2>Description</h2>
+		{{user.description}}
+	</div>
+
 
 {{ super() }}
 {% endblock %}
