@@ -33,7 +33,7 @@ def before_request():
     """Connect to database before each request
 		g is a global object, passed around all time in flask, used to setup things which
 		we wanna have available everywhere.
-	"""
+"""
     g.db = models.DATABASE
     g.db.connect()
     g.user = current_user
@@ -51,27 +51,16 @@ def register():
     form = forms.RegisterForm()
     if form.validate_on_submit():
         flash("Congrats, Registered Successfully!", "success")
-
-        # userModel = models.User(form.username.data,)
-        # models.User.username = form.username.data
-        # models.User.email = form.email.data
-        # models.User.curent_role = form.current_role.data
-        # models.User.current_company = form.curent_company.data
-        # models.User.first_name = form.first_name.data
-        # models.User.last_name =  form.last_name.data
-        # models.User.skills = form.last_name.data
-        # models.User.description= form.description.data
-
         userModelData = {
-            "username":form.username.data,
-            "email":form.email.data,
-            "password":form.password.data,
-            "curent_role":form.current_role.data,
-            "current_company":form.current_company.data,
-            "first_name":form.first_name.data,
-            "last_name":form.last_name.data,
-            "skills":form.last_name.data,
-            "description":form.description.data,
+            "username": form.username.data,
+            "email": form.email.data,
+            "password": form.password.data,
+            "curent_role": form.current_role.data,
+            "current_company": form.current_company.data,
+            "first_name": form.first_name.data,
+            "last_name": form.last_name.data,
+            "skills": form.last_name.data,
+            "description": form.description.data,
         }
         producer.producerData(userModelData)
         print("data sent to producer")
