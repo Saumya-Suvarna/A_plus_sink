@@ -6,7 +6,7 @@ import models
 
 def consumerData():
     consumer = KafkaConsumer(
-        'topicuser',
+        'registration',
         bootstrap_servers=['localhost:9092'],
         auto_offset_reset='latest',
         enable_auto_commit=True,
@@ -14,10 +14,6 @@ def consumerData():
         value_deserializer=lambda x: loads(x.decode('utf-8')))
     for message in consumer:
         userData = message.value
-
-        print("user data")
-        print(userData)
-
         models.User.create_user(
             username=userData["username"],
             email=userData["email"],
@@ -29,7 +25,7 @@ def consumerData():
             skills=userData["skills"],
             description=userData["description"]
         )
-        print('registration successful-', userData)
+        print('registration successful for user ',userData["username"])
 
 
 if __name__ == '__main__':
