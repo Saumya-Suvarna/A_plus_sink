@@ -27,6 +27,7 @@ h1, h2, h3, h4 {
 h1 {
   text-align: center;
   line-height: 30px;
+  color: #FFFF;
 }
 h2 {
   margin: 0 0 10px;
@@ -52,7 +53,7 @@ p {
 /*Header*/
 header {
   width: 100%;
-  background: #fff;
+  background: #78bc20ca;
   padding: 10px 0;
 }
 .icon-logo {
@@ -106,11 +107,11 @@ nav a {
 nav a.new {
   float: right;
   text-transform: uppercase;
-  color: #FFB770;
+  color: #009AB8;
 }
 nav a.current {
-  color: #FFB770;
-  border-bottom: 2px solid #FFB770;
+  color: #009AB8;
+  border-bottom: 2px solid #009AB8;
 }
 article {
   border-bottom: 2px solid #ECEEEF;
@@ -144,7 +145,7 @@ input {
   color: #777B7E;
 }
 input:focus {
-  border-color: #6ECDF7;
+  border-color: #00BFD3;
   color: #2C3238;
 }
 textarea {
@@ -158,14 +159,14 @@ textarea {
   color: #777B7E;
 }
 textarea:focus {
-  border-color: #6ECDF7;
+  border-color: #00BFD3;
   color: #2C3238;
 }
 button {
   width: 100%;
   padding: 20px 0;
   text-align: center;
-  background: #6ECDF7;
+  background: #00BFD3;
   color: #fff;
   border: 0;
   border-radius: 4px;
@@ -203,15 +204,15 @@ button.small {
   color: inherit;
 }
 .follow {
-  border-color: #6ECDF7;
-  color: #6ECDF7;
+  border-color: #00BFD3;
+  color: #00BFD3;
 }
 .follow::before {
   content: '+ '
 }
 .unfollow {
-  border-color: #6ECDF7;
-  color: #6ECDF7;
+  border-color: #00BFD3;
+  color: #00BFD3;
 }
 .unfollow::before {
   content: '- '
@@ -304,8 +305,8 @@ footer p {
   }
   .row {
     padding: 0 10px;
-}
-
-.post {
+  }
+  .post {
     white-space: pre;
+  }
 }
